@@ -54,7 +54,7 @@ async def pull_models():
         try:
             process = await asyncio.create_subprocess_exec(
                 "ollama pull openbmb/minicpm4.1",
-                 "ollama pull gpt-oss-20b"
+                 "ollama pull gpt-oss-20b",
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE
             )
@@ -111,6 +111,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
 
 
