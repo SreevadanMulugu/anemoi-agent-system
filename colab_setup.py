@@ -43,7 +43,7 @@ def install_ollama_colab():
 async def pull_models():
     """Pull required models."""
     models = {
-        "openbmb/MiniCPM4.1:latest": "Meta-planner model",
+        "openbmb/minicpm4.1": "Meta-planner model",
         "gpt-oss-20b": "Executor model"
     }
     
@@ -110,5 +110,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
 
