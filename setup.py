@@ -19,7 +19,7 @@ setup(
     description="Semi-Centralized Multi-Agent System with RL Retrieval",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/anemoi-agent-system",
+    url="https://github.com/SreevadanMulugu/anemoi-agent-system",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
