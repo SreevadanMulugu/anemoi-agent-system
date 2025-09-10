@@ -47,7 +47,7 @@ def install_ollama():
         try:
             # Install Ollama on Linux
             subprocess.run([
-                "curl", "-fsSL", "https://ollama.com/install.sh", "|", "sh"
+                "curl -fsSL https://ollama.com/install.sh | sh"
             ], shell=True, check=True)
             return True
         except subprocess.CalledProcessError:
@@ -78,7 +78,7 @@ async def ensure_models():
     import requests
     
     models = {
-        "minicpm-4.1-8b": "Meta-planner model",
+        "openbmb/minicpm4.1": "Meta-planner model",
         "gpt-oss-20b": "Executor model"
     }
     
@@ -195,3 +195,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
