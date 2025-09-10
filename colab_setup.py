@@ -40,37 +40,6 @@ def install_ollama_colab():
         print("❌ Failed to start Ollama service")
         return False
 
-async def pull_models():
-    """Pull required models."""
-    models = {
-        "openbmb/minicpm4.1": "Meta-planner model",
-        "gpt-oss-20b": "Executor model"
-    }
-    
-    print("📥 Pulling required models...")
-    
-    for model_name, description in models.items():
-        print(f"⬇️  Pulling {model_name} ({description})...")
-        try:
-            process = await asyncio.create_subprocess_exec(
-                "ollama pull openbmb/minicpm4.1",
-                 "ollama pull gpt-oss-20b",
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE
-            )
-            stdout, stderr = await process.communicate()
-            
-            if process.returncode == 0:
-                print(f"✅ Successfully pulled {model_name}")
-            else:
-                print(f"❌ Failed to pull {model_name}: {stderr.decode()}")
-                return False
-        except Exception as e:
-            print(f"❌ Error pulling {model_name}: {e}")
-            return False
-    
-    return True
-
 def setup_colab_environment():
     """Setup the Colab environment."""
     print("🔧 Setting up Colab environment...")
@@ -111,6 +80,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
 
 
