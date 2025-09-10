@@ -18,7 +18,7 @@ def install_ollama_colab():
     # Install Ollama
     print("📦 Installing Ollama...")
     subprocess.run([
-        "curl", "-fsSL", "https://ollama.com/install.sh", "|", "sh"
+        "curl -fsSL https://ollama.com/install.sh | sh"
     ], shell=True, check=True)
     
     # Start Ollama service
@@ -110,3 +110,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
